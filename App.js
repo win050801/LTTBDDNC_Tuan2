@@ -1,38 +1,68 @@
-import React from "react";
-import { SafeAreaView, StyleSheet, TextInput,Text,Button ,Alert} from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import React, { useState } from "react";
 
-const UselessTextInput = () => {
-  const [text, onChangeText] = React.useState(null);
-  const [number, onChangeNumber] = React.useState(null);
+
+import { StyleSheet, Text, View,Image,TouchableOpacity ,TextInput, Button,U} from 'react-native';
+
+export default function App() {
+  const user=[{username:"Thang",password:"123"},{username:"Duc",password:"1234"}];
+  const [test,settest] = useState()
+  const [username,setuser] = useState();
+  const [password,setpass] =useState();
+  const onpress =()=>{
+    for(var i = 0 ; i < user.length;i++){
+      if(user[i].username==username&&user[i].password==password)
+      {
+        settest("Login thành công");
+        break;
+      }
+      settest("username hoặc password ko đúng")
+    }
+  }
+  
   
   return (
-    <SafeAreaView>
-      <Text>Username :</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
-      <Text>Password :</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        // placeholder="Password"
-      />
-      <Button title="Login" 
-      onPress={() => alert('Simple Button pressed')}
-      />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <View style={{flex:1}}></View>
+      <View style={{flex:4}}>
+        <View style={{paddingLeft:10,flexDirection:'row',justifyContent:'space-between', alignItems:'center',paddingRight:50}}>
+          <Text style={styles.text}>User name :</Text>
+          <TextInput style={styles.input}  placeholder='User name' onChangeText={(val) => setuser(val)}>
+          </TextInput>
+        </View>
+        <Text></Text>
+        <View style={{paddingLeft:10,flexDirection:'row',justifyContent:'space-between', alignItems:'center',paddingRight:50}}>
+          <Text style={styles.text}>Password:  :</Text>
+          <TextInput style={styles.input}  placeholder='Password' onChangeText={(val) => setpass(val)}>
+          </TextInput>
+        </View >
+        <View style={{alignItems:'center'}}><Text style={{fontSize:20,color:'red'}}>{test}</Text></View>
+        <Button title='Login' onPress={onpress}></Button>
+      </View>
+    </View>
+    
   );
-};
+}
 
 const styles = StyleSheet.create({
-  input: {
-    height: 30,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    // backgroundColor:'yellow'
   },
-});
+  input:{
+    borderWidth:0.8,
+    justifyContent:'center',
+    alignItems:'center',
+    width:250,
+    height:35,
+    paddingLeft:30,
+    fontSize:18
+  },
+  text:{
+    fontSize:18,
+    fontWeight:'bold'
+  }
+  
 
-export default UselessTextInput;
+});
