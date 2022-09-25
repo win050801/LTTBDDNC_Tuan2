@@ -1,2 +1,3 @@
-# LTTBDDNC_Tuan2![Screenshot (14)](https://user-images.githubusercontent.com/91003576/192143199-7e64cc5f-9059-41cc-923c-0b911478808c.png)
-![Screenshot (15)](https://user-images.githubusercontent.com/91003576/192143201-24532f0e-53c2-494a-8e28-e01570161b5f.png)
+
+![Screenshot (16)](https://user-images.githubusercontent.com/91003576/192143233-515e0e43-af1d-4a8b-a42c-403f32bfd2b8.png)
+![Screenshot (17)](https://user-images.githubusercontent.com/91003576/192143234-e91079c7-fbc3-4a15-b77d-d25484a7cd0b.png)
